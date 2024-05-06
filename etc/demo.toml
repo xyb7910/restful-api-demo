@@ -1,0 +1,18 @@
+[app]
+name = "restful-api-demo"
+host = "127.0.0.1"
+port = "8080"
+key  = "this is your app key"
+
+[mysql]
+host = "127.0.0.1"
+port = "3306"
+username = "go_course"
+password = "xxxx"
+database = "go_course"
+
+[log]
+level = "debug"
+dir = "logs"
+format = "text"
+to = "stdout"
