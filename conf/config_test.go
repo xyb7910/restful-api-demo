@@ -22,3 +22,11 @@ func TestLoadConfigFromEnv(t *testing.T) {
 		should.Equal(config.App.Name, "restful-api-demo")
 	}
 }
+
+func TestGetDB(t *testing.T) {
+	should := assert.New(t)
+	err := LoadConfigFromToml("../etc/demo.toml")
+	if should.NoError(err) {
+		config.MySQL.GetDB()
+	}
+}

@@ -25,3 +25,13 @@ func LoadConfigFromEnv() error {
 	config = NewDefaultConfig()
 	return env.Parse(config)
 }
+
+// 加载全局配置
+func loadConfig() (err error) {
+	// 加载全局db
+	db, err = config.MySQL.getDBConn()
+	if err != nil {
+		return fmt.Errorf("load global db error: %v", err)
+	}
+	return nil
+}
